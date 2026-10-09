@@ -465,9 +465,6 @@
     <label>ФИО *</label>
     <input type="text" id="fio" required>
 
-    <label>Табельный номер / Логин *</label>
-    <input type="text" id="tabnum" required>
-
     <label>Email *</label>
     <input type="email" id="email" placeholder="i.ivanov@pixelplus.ru" required>
 
@@ -778,9 +775,8 @@ function updateCheckoutTotal() {
   const balance = parseInt(document.getElementById('balanceInput').value) || 0;
 
   document.getElementById('checkoutTotal').innerHTML = `
-    Товары: ${itemsSum} бонусов<br>
-    Доставка: ${deliveryCost} бонусов<br>
-    <span style="font-size:18px;">Итого: ${total} бонусов</span>
+  Товары: ${itemsSum} бонусов<br>
+  <span style="font-size:18px;">Итого: ${total} бонусов</span>
   `;
 
   const hint = document.getElementById('checkoutHint');
@@ -803,7 +799,6 @@ document.addEventListener('input', function(e) {
 
 function submitOrder() {
   const fio = document.getElementById('fio').value.trim();
-  const tabnum = document.getElementById('tabnum').value.trim();
   const email = document.getElementById('email').value.trim();
   const dept = document.getElementById('dept').value.trim();
   const balance = parseInt(document.getElementById('balanceInput').value) || 0;
@@ -812,8 +807,7 @@ function submitOrder() {
   const ozonAddress = document.getElementById('ozonAddress').value.trim();
   const comment = document.getElementById('comment').value.trim();
 
-  if (!fio || !tabnum || !email) { alert('Заполните обязательные поля: ФИО, табельный номер, email'); return; }
-  if (!balance) { alert('Укажите ваш текущий баланс бонусов'); return; }
+  if (!fio || !email) { alert('Заполните обязательные поля: ФИО и Email'); return; }  if (!balance) { alert('Укажите ваш текущий баланс бонусов'); return; }
   if (!delivery) { alert('Выберите способ получения'); return; }
   if (delivery === 'pickup' && !office) { alert('Выберите офис для самовывоза'); return; }
   if (delivery === 'ozon' && !ozonAddress) { alert('Укажите адрес пункта выдачи Озон'); return; }
@@ -823,7 +817,7 @@ function submitOrder() {
   const total = itemsSum + deliveryCost;
 
   const order = {
-    fio, tabnum, email, dept,
+    fio, email, dept,
     items: cart.map(i => `${i.title}${i.size ? ' (' + i.size + ')' : ''} — ${i.qty} шт.`).join('\n'),
     itemsSum, deliveryCost, total,
     balance,
