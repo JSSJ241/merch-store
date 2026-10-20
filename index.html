@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Мерч нашей компании — Пиксель Плюс</title>
+<title>Мерч компании — Пиксель Плюс</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -163,8 +163,11 @@
     overflow: hidden; cursor: pointer;
   }
   .card-img img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-    transition: transform 0.3s;
+   width: 100%; height: 100%; 
+   object-fit: contain;    /* было cover — станет contain */
+   padding: 12px;          /* отступ от краёв */
+   display: block;
+   transition: transform 0.3s;
   }
   .card-img:hover img { transform: scale(1.05); }
   .card-img::after {
