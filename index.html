@@ -743,19 +743,16 @@ function onDeliveryChange() {
 
 function updateCheckoutTotal() {
   const itemsSum = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-  const delivery = document.getElementById('delivery').value;
-  const deliveryCost = delivery === 'ozon' ? DELIVERY_PRICE : 0;
-  const total = itemsSum + deliveryCost;
   const balance = parseInt(document.getElementById('balanceInput').value) || 0;
 
+  // Выводим только итоговую сумму товаров (без доставки)
   document.getElementById('checkoutTotal').innerHTML = `
-    Товары: ${itemsSum} бонусов<br>
-    <span style="font-size:18px;">Итого: ${total} бонусов</span>
+    <span style="font-size:18px;">Итого к списанию: ${itemsSum} бонусов</span>
   `;
 
   const hint = document.getElementById('checkoutHint');
-  if (balance > 0 && total > balance) {
-    hint.textContent = `Недостаточно бонусов. Вам не хватает ${total - balance} бонусов.`;
+  if (balance > 0 && itemsSum > balance) {
+    hint.textContent = `Недостаточно бонусов. Вам не хватает ${itemsSum - balance} бонусов.`;
     hint.className = 'hint error';
     document.getElementById('submitOrder').disabled = true;
   } else {
@@ -764,12 +761,6 @@ function updateCheckoutTotal() {
     document.getElementById('submitOrder').disabled = false;
   }
 }
-
-document.addEventListener('input', function(e) {
-  if (e.target && e.target.id === 'balanceInput') {
-    updateCheckoutTotal();
-  }
-});
 
 function submitOrder() {
   const fio = document.getElementById('fio').value.trim();
