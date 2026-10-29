@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Мерч нашей компании — Пиксель Плюс</title>
+<title>Мерч компании Pixel Plus</title>
+<link rel="icon" type="image/png" href="images/logo.png">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -163,13 +164,17 @@
   }
   .card-img:hover img { transform: scale(1.05); }
   
-  /* Спец. стиль для брелока, чтобы фото влезало */
+  /* Спец. стиль для брелока, чтобы фото не сплющивалось */
   .card-keychain .card-img {
     background: #fff;
-    padding: 12px;
+    padding: 0;
   }
   .card-keychain .card-img img {
-    object-fit: contain;
+    object-fit: cover;
+    transform: scale(0.85);
+  }
+  .card-keychain .card-img:hover img {
+    transform: scale(0.9); /* Легкий зум при наведении */
   }
 
   .card-img::after {
@@ -386,8 +391,8 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-content">
-      <h1>Мерч компании</h1>
-      <p>Потратьте накопленные Пиксель бонусы на мерч компании!</p>
+      <h1>Мерч компании Pixel Plus</h1>
+      <p>Потратьте накопленные Пиксель бонусы на мерч нашей компании!</p>
       <div class="min-order">Минимальная сумма заказа — 1000 бонусов</div>
     </div>
     <div class="hero-logo-wrap">
@@ -553,14 +558,13 @@ const MIN_ORDER = 1000;
 const DELIVERY_PRICE = 470;
 
 // ===== СОСТОЯНИЕ =====
-let PRODUCTS = []; // Товары будут загружены из Google Таблицы
+let PRODUCTS = []; 
 let cart = [];
 let pendingProduct = null;
 
 // ===== ЗАГРУЗКА ТОВАРОВ ИЗ ТАБЛИЦЫ =====
 async function loadProducts() {
   try {
-    // Показываем скелетон загрузки
     document.getElementById('products').innerHTML = '<p style="text-align:center; width:100%; color: var(--pp-gray);">Загрузка товаров...</p>';
     
     const response = await fetch(SCRIPT_URL);
@@ -634,12 +638,8 @@ function openProductModal(productId) {
 function addToCart(productId) {
   const product = PRODUCTS.find(p => p.id === productId);
   if (!product) return;
-  if (product.hasSize) {
-    // Если у товара есть размеры, здесь можно добавить логику выбора размера. 
-    // Пока для простоты добавляем без размера.
-    addItemToCart(product, null, 1);
-    return;
-  }
+  // Временно упрощено: если есть размеры, добавляем без них. 
+  // Для выбора размеров нужно расширять логику.
   addItemToCart(product, null, 1);
 }
 
@@ -872,7 +872,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ===== СТАРТ =====
-loadProducts(); // Загружаем товары из таблицы при старте
+loadProducts(); 
 </script>
 
 </body>
