@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171717">
+<meta name="description" content="Корпоративный мерч Пиксель Плюс за накопленные бонусы.">
 <title>Мерч компании Pixel Plus</title>
 <link rel="icon" type="image/jpeg" href="images/hero-bg.jpg">
 <style>
@@ -370,17 +372,402 @@
     .hero-logo-text { font-size: 30px; }
     .footer-logo { height: 36px; }
   }
+
+  /* ===== REFINED UI ===== */
+  body { background: #f4f2ee; }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 150;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    background: rgba(20, 20, 20, .94);
+    color: #fff;
+    backdrop-filter: blur(16px);
+  }
+  .site-header-inner {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    max-width: 1200px;
+    min-height: 66px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .site-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: .09em;
+    white-space: nowrap;
+  }
+  .site-brand img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  .site-brand strong { color: #fa4d4d; }
+  .site-nav {
+    display: flex;
+    gap: 20px;
+    margin-left: auto;
+  }
+  .site-nav a {
+    color: #d5d5d5;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color .16s ease;
+  }
+  .site-nav a:hover { color: #fff; }
+  .header-cart {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 38px;
+    padding: 0 14px;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 10px;
+    background: rgba(255,255,255,.06);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .header-cart:hover { background: rgba(255,255,255,.12); }
+  .header-cart span {
+    display: inline-grid;
+    min-width: 20px;
+    height: 20px;
+    place-items: center;
+    border-radius: 99px;
+    background: var(--pp-red);
+    font-size: 10px;
+  }
+
+  .hero {
+    padding: 72px 0 104px;
+    background:
+      radial-gradient(circle at 82% 30%, rgba(227,6,19,.34), transparent 38%),
+      radial-gradient(circle at 14% 82%, rgba(227,6,19,.13), transparent 42%),
+      linear-gradient(145deg, #171717, #252020);
+  }
+  .hero-inner {
+    grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
+    gap: 54px;
+  }
+  .hero-kicker,
+  .section-kicker {
+    display: inline-flex;
+    width: max-content;
+    margin-bottom: 14px;
+    padding: 5px 9px;
+    border-radius: 99px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .hero-kicker {
+    color: #ffacac;
+    border: 1px solid rgba(227,6,19,.36);
+    background: rgba(227,6,19,.12);
+  }
+  .hero h1 {
+    max-width: 720px;
+    font-size: clamp(38px, 5.5vw, 62px);
+    line-height: .98;
+    letter-spacing: -.055em;
+  }
+  .hero p {
+    max-width: 600px;
+    color: #c9c7c7;
+    font-size: 15px;
+  }
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .hero-cta {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    padding: 0 18px;
+    border-radius: 9px;
+    background: #fff;
+    color: #171717;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .hero .min-order {
+    padding: 11px 14px;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 9px;
+    background: rgba(255,255,255,.06);
+    font-size: 11px;
+  }
+  .hero-logo {
+    max-height: 210px;
+    opacity: .97;
+  }
+  .container { padding-top: 0; }
+
+  .catalog-section {
+    position: relative;
+    z-index: 3;
+    margin-top: -52px;
+    padding: 25px;
+    border: 1px solid rgba(255,255,255,.85);
+    border-radius: 24px;
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 18px 55px rgba(34,24,22,.09);
+    backdrop-filter: blur(16px);
+  }
+  .section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 18px;
+  }
+  .section-heading h2 {
+    color: var(--pp-black);
+    font-size: 25px;
+    line-height: 1.1;
+    letter-spacing: -.035em;
+  }
+  .section-heading p {
+    margin-top: 6px;
+    color: var(--pp-gray);
+    font-size: 11px;
+  }
+  .section-kicker {
+    margin-bottom: 9px;
+    color: var(--pp-red);
+    background: rgba(227,6,19,.07);
+  }
+  .catalog-note {
+    padding: 7px 11px;
+    border-radius: 99px;
+    background: #edf5ee;
+    color: #50705b;
+    font-size: 9px;
+    font-weight: 750;
+    white-space: nowrap;
+  }
+  .products {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .card {
+    border-radius: 17px;
+    box-shadow: 0 7px 20px rgba(34,24,22,.055);
+  }
+  .card:hover { box-shadow: 0 15px 32px rgba(34,24,22,.11); }
+  .card.sold-out { opacity: .62; }
+  .card .card-img {
+    width: 100%;
+    height: 210px;
+    padding: 0;
+    border: 0;
+    background: #f3f3f3;
+    cursor: pointer;
+  }
+  .card .card-img img { object-fit: contain; padding: 8px; }
+  .stock-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 3;
+    padding: 5px 8px;
+    border-radius: 99px;
+    font-size: 8px;
+    font-weight: 800;
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
+  }
+  .stock-badge.available { color: #4d725b; background: #e8f3eb; }
+  .stock-badge.unavailable { color: #8b3b3b; background: #fbe5e3; }
+  .card-body { padding: 15px; }
+  .card .card-title {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+    color: var(--pp-black);
+    text-align: left;
+    font-size: 14px;
+    font-weight: 750;
+  }
+  .card-desc {
+    min-height: 38px;
+    margin-top: 5px;
+    font-size: 11px;
+  }
+  .card-meta {
+    display: grid;
+    gap: 3px;
+    padding: 8px 9px;
+    font-size: 9px;
+  }
+  .card-bottom { margin-top: auto; }
+  .card-bottom .card-price small {
+    color: var(--pp-gray);
+    font-size: 9px;
+    font-weight: 500;
+  }
+  .card-bottom > button {
+    margin-top: 9px;
+  }
+  .card button:disabled,
+  .modal .btn-primary:disabled {
+    cursor: not-allowed;
+    opacity: .52;
+  }
+  .catalog-error {
+    grid-column: 1 / -1;
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+    padding: 48px 20px;
+    color: var(--pp-gray);
+    font-size: 11px;
+  }
+  .catalog-error strong { color: var(--pp-black); font-size: 15px; }
+  .catalog-error button {
+    width: auto;
+    margin-top: 6px;
+    padding: 9px 14px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--pp-black);
+    color: #fff;
+  }
+  .how-it-works {
+    margin-top: 28px;
+    padding: 26px;
+    border: 1px solid var(--pp-border);
+    border-radius: 22px;
+    background: rgba(255,255,255,.72);
+  }
+  .compact-heading { margin-bottom: 16px; }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .step {
+    padding: 16px;
+    border-radius: 14px;
+    background: #f8f6f2;
+  }
+  .step > span {
+    color: var(--pp-red);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .08em;
+  }
+  .step h3 {
+    margin: 9px 0 5px;
+    font-size: 13px;
+  }
+  .step p {
+    color: var(--pp-gray);
+    font-size: 10px;
+    line-height: 1.45;
+  }
+  .idea-block {
+    margin-top: 24px;
+    border-radius: 22px;
+    box-shadow: 0 8px 24px rgba(34,24,22,.05);
+  }
+  .product-size-block { margin-top: 14px; }
+  .product-size-block[hidden] { display: none; }
+  .product-size-block label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--pp-gray);
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .order-number {
+    width: max-content;
+    margin: 0 auto 13px;
+    padding: 6px 10px;
+    border-radius: 99px;
+    background: #f3f3f3;
+    color: var(--pp-black);
+    font-size: 11px;
+    font-weight: 750;
+  }
+  .floating-cart {
+    z-index: 120;
+    background: var(--pp-black);
+    box-shadow: 0 10px 28px rgba(0,0,0,.28);
+    display: none;
+  }
+  .floating-cart:hover { background: var(--pp-red); }
+
+  @media (max-width: 980px) {
+    .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 760px) {
+    .site-header-inner { min-height: 58px; padding: 0 15px; gap: 12px; }
+    .site-nav { display: none; }
+    .header-cart { margin-left: auto; }
+    .hero { padding: 54px 0 82px; }
+    .hero-inner { gap: 20px; }
+    .hero h1 { font-size: 38px; }
+    .catalog-section { margin-top: -42px; padding: 16px; border-radius: 20px; }
+    .section-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
+    .products { gap: 10px; }
+    .card-img { height: 145px; }
+    .card-body { padding: 12px; }
+    .steps { grid-template-columns: 1fr; }
+    .how-it-works { padding: 18px; }
+  }
+  @media (max-width: 440px) {
+    .products { grid-template-columns: 1fr; }
+    .card-img { height: 200px; }
+    .hero h1 { font-size: 34px; }
+  }
 </style>
 </head>
 <body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-brand" href="#" aria-label="Мерч Пиксель Плюс — на главную">
+      <img src="images/logo.png" alt="">
+      <span>PIXEL <strong>MERCH</strong></span>
+    </a>
+    <nav class="site-nav" aria-label="Навигация">
+      <a href="#catalog">Каталог</a>
+      <a href="#how-it-works">Как получить</a>
+      <a href="#idea">Предложить идею</a>
+    </nav>
+    <button class="header-cart" type="button" onclick="openCart()" aria-label="Открыть корзину">
+      Корзина <span id="headerCartCount">0</span>
+    </button>
+  </div>
+</header>
 
 <!-- ===== HERO ===== -->
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-content">
+      <span class="hero-kicker">Бонусная программа сотрудников</span>
       <h1>Мерч компании Pixel Plus</h1>
-      <p>Потратьте накопленные Пиксель бонусы на мерч компании!</p>
-      <div class="min-order">Минимальная сумма заказа — 1000 бонусов</div>
+      <p>Выберите фирменные вещи за накопленные Пиксель бонусы. Мы соберём заказ и поможем с получением.</p>
+      <div class="hero-actions">
+        <a href="#catalog" class="hero-cta">Смотреть мерч</a>
+        <div class="min-order">Минимум — 1000 бонусов</div>
+      </div>
     </div>
     <div class="hero-logo-wrap">
       <img class="hero-logo"
@@ -393,10 +780,45 @@
 </div>
 
 <div class="container">
-  <!-- Сюда будут загружаться товары из таблицы -->
-  <div class="products" id="products"></div>
+  <section class="catalog-section" id="catalog" aria-labelledby="catalogTitle">
+    <div class="section-heading">
+      <div>
+        <span class="section-kicker">Коллекция</span>
+        <h2 id="catalogTitle">Выберите что-то своё</h2>
+        <p>Наличие и стоимость подтягиваются из актуального каталога.</p>
+      </div>
+      <span class="catalog-note">Бонусы не сгорают</span>
+    </div>
+    <div class="products" id="products" aria-live="polite"></div>
+  </section>
 
-  <div class="idea-block">
+  <section class="how-it-works" id="how-it-works" aria-labelledby="howTitle">
+    <div class="section-heading compact-heading">
+      <div>
+        <span class="section-kicker">Коротко о процессе</span>
+        <h2 id="howTitle">Как получить мерч</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <span>01</span>
+        <h3>Выберите товары</h3>
+        <p>Соберите заказ минимум на 1000 бонусов.</p>
+      </article>
+      <article class="step">
+        <span>02</span>
+        <h3>Укажите получение</h3>
+        <p>Выберите офис или доставку до Ozon.</p>
+      </article>
+      <article class="step">
+        <span>03</span>
+        <h3>Дождитесь проверки</h3>
+        <p>Мы проверим бонусы и наличие, затем свяжемся с вами.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="idea-block" id="idea">
     <h3>Не нашли что искали?</h3>
     <p>Предложите свою идею для мерча, и мы рассмотрим её!</p>
     <button onclick="openIdeaModal()">Предложить идею для мерча</button>
@@ -416,22 +838,20 @@
   </div>
 </div>
 
-<!-- ===== ПЛАВАЮЩАЯ КОРЗИНА ===== -->
-<button class="floating-cart" onclick="openCart()">
-  🛒 Корзина
-  <span class="cart-count" id="cartCount">0</span>
-</button>
-
 <!-- ===== МОДАЛКА: ТОВАР ===== -->
 <div class="modal-overlay" id="productModal">
-  <div class="modal product-modal">
-    <button class="product-modal-close" onclick="closeModal('productModal')">×</button>
+  <div class="modal product-modal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+    <button class="product-modal-close" type="button" onclick="closeModal('productModal')" aria-label="Закрыть">×</button>
     <div class="product-modal-inner">
       <div class="product-modal-image" id="productModalImage"></div>
       <div class="product-modal-info">
         <h2 id="productModalTitle"></h2>
         <div class="modal-desc" id="productModalDesc"></div>
         <div class="modal-meta" id="productModalMeta"></div>
+      <div id="productSizeBlock" class="product-size-block" hidden>
+        <label for="productSize">Выберите размер</label>
+        <select id="productSize"></select>
+      </div>
         <div class="modal-price" id="productModalPrice"></div>
         <button class="btn-primary" id="productModalBtn">В корзину</button>
       </div>
@@ -441,9 +861,9 @@
 
 <!-- ===== МОДАЛКА: КОРЗИНА ===== -->
 <div class="modal-overlay" id="cartModal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('cartModal')">×</button>
-    <h2>Корзина</h2>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <button class="modal-close" type="button" onclick="closeModal('cartModal')" aria-label="Закрыть">×</button>
+    <h2 id="cartTitle">Корзина</h2>
     <div id="cartItems"></div>
     <div id="cartFooter"></div>
   </div>
@@ -451,9 +871,9 @@
 
 <!-- ===== МОДАЛКА: ОФОРМЛЕНИЕ ===== -->
 <div class="modal-overlay" id="checkoutModal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('checkoutModal')">×</button>
-    <h2>Оформление заказа</h2>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <button class="modal-close" type="button" onclick="closeModal('checkoutModal')" aria-label="Закрыть">×</button>
+    <h2 id="checkoutTitle">Оформление заказа</h2>
 
     <label>ФИО *</label>
     <input type="text" id="fio" required>
@@ -464,15 +884,15 @@
     <label>Отдел</label>
     <input type="text" id="dept">
 
-    <label>Ваш текущий баланс бонусов *</label>
+    <label>Ваш баланс Пиксель бонусов *</label>
     <input type="number" id="balanceInput" placeholder="Например, 1800" min="0" required>
-    <p class="hint">Проверьте баланс в личном кабинете TEAM</p>
+    <p class="hint">Укажите баланс из TEAM. Перед выдачей мы проверим его в системе.</p>
 
     <label>Способ получения *</label>
     <select id="delivery" onchange="onDeliveryChange()">
       <option value="">— Выберите —</option>
       <option value="pickup">Самовывоз из офиса</option>
-      <option value="ozon">Доставка до пункта выдачи Озон (+470 бонусов)</option>
+      <option value="ozon">Доставка до пункта выдачи Ozon</option>
     </select>
 
     <div id="pickupBlock" style="display:none;">
@@ -484,8 +904,9 @@
     </div>
 
     <div id="ozonBlock" style="display:none;">
-      <label>Адрес пункта выдачи Озон *</label>
+      <label>Адрес пункта выдачи Ozon *</label>
       <textarea id="ozonAddress" placeholder="Город, улица, дом"></textarea>
+      <p class="hint">Доставка не списывает дополнительные бонусы.</p>
     </div>
 
     <label>Комментарий</label>
@@ -500,9 +921,9 @@
 
 <!-- ===== МОДАЛКА: ИДЕЯ ===== -->
 <div class="modal-overlay" id="ideaModal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('ideaModal')">×</button>
-    <h2>Предложите идею для мерча</h2>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="ideaTitle">
+    <button class="modal-close" type="button" onclick="closeModal('ideaModal')" aria-label="Закрыть">×</button>
+    <h2 id="ideaTitle">Предложите идею для мерча</h2>
     <p style="color:#6b7280; font-size:14px; margin-bottom:12px;">
       Расскажите, какой мерч вы хотели бы видеть. Мы рассмотрим все предложения!
     </p>
@@ -518,10 +939,11 @@
 
 <!-- ===== МОДАЛКА: УСПЕХ ===== -->
 <div class="modal-overlay" id="successModal">
-  <div class="modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
     <div class="success">
       <div class="check">✅</div>
-      <h2>Спасибо за заказ!</h2>
+      <h2 id="successTitle">Спасибо за заказ!</h2>
+      <p class="order-number" id="successOrderNumber"></p>
       <p>Ваш заказ принят и передан в обработку.</p>
       <p>В течение 1–2 дней мы:</p>
       <ul>
@@ -530,7 +952,7 @@
         <li>свяжемся с вами для подтверждения</li>
       </ul>
       <p>Если вы выбрали самовывоз — мы отправим заказ в выбранный офис и уведомим вас о готовности.</p>
-      <p>Если вы выбрали доставку Озон — мы отправим заказ в указанный пункт выдачи.</p>
+      <p>Если вы выбрали доставку Ozon — мы отправим заказ в указанный пункт выдачи.</p>
       <p class="success-contact">Если у вас есть вопросы — пишите на почту m.koniaeva@pixelplus.ru</p>
       <p style="text-align:center; font-weight:600; margin-top:8px;">Команда PixelPlus</p>
       <button class="btn-primary" onclick="closeModal('successModal')">Закрыть</button>
@@ -542,12 +964,84 @@
 // ===== НАСТРОЙКИ =====
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzi9hD7bBzb2tz-Iqag14frDMgFD37_wkR7CeA8PCAk1TjZo24uoxlYEhsoixwCLfNBSA/exec';
 const MIN_ORDER = 1000;
-const DELIVERY_PRICE = 470;
+const MAX_ITEM_QTY = 3;
+const CART_STORAGE_KEY = 'pixel-merch-cart-v1';
 
 // ===== СОСТОЯНИЕ =====
-let PRODUCTS = []; 
-let cart = [];
+let PRODUCTS = [];
+let cart = loadCart();
 let pendingProduct = null;
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, char => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[char]));
+}
+
+function safeImageUrl(value) {
+  const url = String(value || '').trim();
+  if (!url) return '';
+  if (/^images\/[\w./() -]+$/i.test(url) || /^https:\/\//i.test(url)) return url;
+  return '';
+}
+
+function productIsAvailable(product) {
+  const raw = product['В наличии'] ?? product.available;
+  if (raw === undefined || raw === null || raw === '') return true;
+  return !['нет', 'false', '0', 'no'].includes(String(raw).trim().toLowerCase());
+}
+
+function productStock(product) {
+  const raw = product.stock ?? product['Остаток'] ?? product.quantity;
+  if (raw === undefined || raw === null || raw === '') return null;
+  const value = Number(raw);
+  return Number.isFinite(value) ? value : null;
+}
+
+function productSizes(product) {
+  if (Array.isArray(product.sizes)) return product.sizes.map(String).map(item => item.trim()).filter(Boolean);
+  if (typeof product.sizes === 'string') return product.sizes.split(',').map(item => item.trim()).filter(Boolean);
+  if (product.hasSize && typeof product.size === 'string' && /,/.test(product.size)) {
+    return product.size.split(',').map(item => item.trim()).filter(Boolean);
+  }
+  return [];
+}
+
+function normalizeProduct(product) {
+  return {
+    ...product,
+    id: String(product.id || ''),
+    title: String(product.title || 'Товар'),
+    desc: String(product.desc || ''),
+    price: Math.max(0, Number(product.price) || 0),
+    size: String(product.size || '—'),
+    color: String(product.color || '—'),
+    image: safeImageUrl(product.image)
+  };
+}
+
+function loadCart() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || '[]');
+    if (!Array.isArray(stored)) return [];
+    return stored.filter(item =>
+      item && item.id && Number.isFinite(Number(item.price)) && Number.isFinite(Number(item.qty))
+    ).map(item => ({
+      id: String(item.id),
+      title: String(item.title || 'Товар'),
+      size: item.size ? String(item.size) : null,
+      color: String(item.color || ''),
+      price: Math.max(0, Number(item.price) || 0),
+      qty: Math.min(MAX_ITEM_QTY, Math.max(1, Number(item.qty) || 1))
+    }));
+  } catch {
+    return [];
+  }
+}
+
+function saveCart() {
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+}
 
 // ===== ЗАГРУЗКА ТОВАРОВ ИЗ ТАБЛИЦЫ =====
 async function loadProducts() {
@@ -559,11 +1053,16 @@ async function loadProducts() {
     
     if (data.error) throw new Error(data.error);
     
-    PRODUCTS = data.products;
+    PRODUCTS = (data.products || []).map(normalizeProduct);
     renderProducts();
   } catch (error) {
     console.error('Ошибка загрузки товаров:', error);
-    document.getElementById('products').innerHTML = '<p style="text-align:center; width:100%; color: red;">Не удалось загрузить товары. Попробуйте обновить страницу.</p>';
+    document.getElementById('products').innerHTML = `
+      <div class="catalog-error">
+        <strong>Не удалось загрузить каталог</strong>
+        <span>Проверьте подключение и попробуйте ещё раз.</span>
+        <button type="button" onclick="loadProducts()">Повторить</button>
+      </div>`;
   }
 }
 
@@ -576,20 +1075,30 @@ function renderProducts() {
     return;
   }
 
-  container.innerHTML = PRODUCTS.map(p => `
-    <div class="card ${p.id === 'keychain' ? 'card-keychain' : ''}">
-      <div class="card-img" onclick="openProductModal('${p.id}')">
-        ${p.image ? `<img src="${p.image}" alt="${p.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='Фото товара';">` : 'Фото товара'}
-      </div>
+  container.innerHTML = PRODUCTS.map(p => {
+    const available = productIsAvailable(p);
+    const stock = productStock(p);
+    const hasSizes = productSizes(p).length > 0;
+    const stockText = !available ? 'Нет в наличии' : stock !== null ? `Осталось: ${stock}` : 'В наличии';
+    return `
+    <article class="card ${p.id === 'keychain' ? 'card-keychain' : ''} ${available ? '' : 'sold-out'}">
+      <button class="card-img" type="button" data-open-product="${escapeHtml(p.id)}" aria-label="Открыть ${escapeHtml(p.title)}">
+        ${p.image ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" onerror="this.style.display='none'; this.parentElement.classList.add('no-image');">` : '<span class="no-image-label">Фото товара</span>'}
+        <span class="stock-badge ${available ? 'available' : 'unavailable'}">${stockText}</span>
+      </button>
       <div class="card-body">
-        <div class="card-title" onclick="openProductModal('${p.id}')">${p.title}</div>
-        <div class="card-desc">${p.desc}</div>
-        <div class="card-meta">Размер: ${p.size}<br>Цвет: ${p.color}</div>
-        <div class="card-price">${p.price} бонусов</div>
-        <button onclick="addToCart('${p.id}')">В корзину</button>
+        <button class="card-title" type="button" data-open-product="${escapeHtml(p.id)}">${escapeHtml(p.title)}</button>
+        <div class="card-desc">${escapeHtml(p.desc)}</div>
+        <div class="card-meta"><span>Размер: ${escapeHtml(p.size)}</span><span>Цвет: ${escapeHtml(p.color)}</span><span>До ${MAX_ITEM_QTY} шт. одного товара</span></div>
+        <div class="card-bottom">
+          <div class="card-price">${p.price.toLocaleString('ru-RU')} <small>бонусов</small></div>
+          <button type="button" ${hasSizes ? `data-open-product="${escapeHtml(p.id)}"` : `data-add-product="${escapeHtml(p.id)}"`} ${available ? '' : 'disabled'}>
+            ${!available ? 'Нет в наличии' : hasSizes ? 'Выбрать размер' : 'В корзину'}
+          </button>
+        </div>
       </div>
-    </div>
-  `).join('');
+    </article>`;
+  }).join('');
 }
 
 // ===== МОДАЛКА ТОВАРА =====
@@ -598,41 +1107,58 @@ function openProductModal(productId) {
   if (!p) return;
 
   document.getElementById('productModalImage').innerHTML =
-    p.image ? `<img src="${p.image}" alt="${p.title}">` : '<div class="placeholder">Фото товара</div>';
+    p.image ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}">` : '<div class="placeholder">Фото товара</div>';
 
   document.getElementById('productModalTitle').textContent = p.title;
   document.getElementById('productModalDesc').textContent = p.desc;
 
   document.getElementById('productModalMeta').innerHTML = `
-    <div><strong>Размер:</strong> ${p.size}</div>
-    <div><strong>Цвет:</strong> ${p.color}</div>
+    <div><strong>Размер:</strong> ${escapeHtml(p.size)}</div>
+    <div><strong>Цвет:</strong> ${escapeHtml(p.color)}</div>
+    <div><strong>Наличие:</strong> ${productIsAvailable(p) ? 'да' : 'нет'}</div>
   `;
 
   document.getElementById('productModalPrice').innerHTML = `
-    ${p.price} бонусов
+    ${p.price.toLocaleString('ru-RU')} бонусов
   `;
 
+  const sizes = productSizes(p);
+  const sizeBlock = document.getElementById('productSizeBlock');
+  const sizeSelect = document.getElementById('productSize');
+  sizeBlock.hidden = sizes.length === 0;
+  sizeSelect.innerHTML = sizes.map(size => `<option value="${escapeHtml(size)}">${escapeHtml(size)}</option>`).join('');
+  sizeSelect.required = sizes.length > 0;
+
   const btn = document.getElementById('productModalBtn');
+  btn.disabled = !productIsAvailable(p);
+  btn.textContent = productIsAvailable(p) ? 'В корзину' : 'Нет в наличии';
   btn.onclick = () => {
+    const size = sizes.length ? sizeSelect.value : null;
     closeModal('productModal');
-    addToCart(p.id);
+    addToCart(p.id, size);
   };
 
   openModal('productModal');
 }
 
 // ===== ДОБАВЛЕНИЕ В КОРЗИНУ =====
-function addToCart(productId) {
+function addToCart(productId, size = null) {
   const product = PRODUCTS.find(p => p.id === productId);
   if (!product) return;
-  // Временно упрощено: если есть размеры, добавляем без них. 
-  // Для выбора размеров нужно расширять логику.
-  addItemToCart(product, null, 1);
+  if (!productIsAvailable(product)) {
+    alert('Этого товара сейчас нет в наличии.');
+    return;
+  }
+  if (productSizes(product).length && !size) {
+    openProductModal(productId);
+    return;
+  }
+  addItemToCart(product, size, 1);
 }
 
 function addItemToCart(product, size, qty) {
   const existing = cart.find(item => item.id === product.id && item.size === size);
-  if (existing) { existing.qty += qty; }
+  if (existing) { existing.qty = Math.min(MAX_ITEM_QTY, existing.qty + qty); }
   else {
     cart.push({
       id: product.id,
@@ -643,6 +1169,7 @@ function addItemToCart(product, size, qty) {
       qty: qty
     });
   }
+  saveCart();
   updateCartCount();
   openCart();
 }
@@ -650,7 +1177,7 @@ function addItemToCart(product, size, qty) {
 // ===== КОРЗИНА =====
 function updateCartCount() {
   const total = cart.reduce((sum, item) => sum + item.qty, 0);
-  document.getElementById('cartCount').textContent = total;
+  document.getElementById('headerCartCount').textContent = total;
 }
 
 function openCart() {
@@ -671,13 +1198,13 @@ function renderCart() {
   itemsContainer.innerHTML = cart.map((item, i) => `
     <div class="cart-item">
       <div class="cart-item-info">
-        <div class="cart-item-title">${item.title}</div>
-        <div class="cart-item-meta">${item.size ? 'Размер: ' + item.size + ' | ' : ''}${item.price} бонусов</div>
+        <div class="cart-item-title">${escapeHtml(item.title)}</div>
+        <div class="cart-item-meta">${item.size ? 'Размер: ' + escapeHtml(item.size) + ' | ' : ''}${item.price} бонусов</div>
       </div>
       <div class="cart-item-qty">
         <button onclick="changeQty(${i}, -1)">−</button>
         <span>${item.qty}</span>
-        <button onclick="changeQty(${i}, 1)">+</button>
+        <button onclick="changeQty(${i}, 1)" ${item.qty >= MAX_ITEM_QTY ? 'disabled' : ''}>+</button>
       </div>
       <button class="cart-item-remove" onclick="removeItem(${i})">×</button>
     </div>
@@ -691,6 +1218,7 @@ function renderCart() {
 
   footerContainer.innerHTML = `
     <div class="cart-total"><span>Сумма товаров:</span><span>${itemsSum} бонусов</span></div>
+    <p class="hint">В одной заявке можно добавить не более ${MAX_ITEM_QTY} единиц каждого товара.</p>
     ${hint}
     <button class="btn-primary" ${itemsSum >= MIN_ORDER ? '' : 'disabled'} onclick="openCheckout()">Оформить заказ</button>
   `;
@@ -699,13 +1227,15 @@ function renderCart() {
 function changeQty(index, delta) {
   cart[index].qty += delta;
   if (cart[index].qty < 1) cart[index].qty = 1;
-  if (cart[index].qty > 5) cart[index].qty = 5;
+  if (cart[index].qty > MAX_ITEM_QTY) cart[index].qty = MAX_ITEM_QTY;
+  saveCart();
   updateCartCount();
   renderCart();
 }
 
 function removeItem(index) {
   cart.splice(index, 1);
+  saveCart();
   updateCartCount();
   renderCart();
 }
@@ -738,7 +1268,11 @@ function updateCheckoutTotal() {
   `;
 
   const hint = document.getElementById('checkoutHint');
-  if (balance > 0 && itemsSum > balance) {
+  if (itemsSum < MIN_ORDER) {
+    hint.textContent = `Минимальная сумма заказа — ${MIN_ORDER} бонусов.`;
+    hint.className = 'hint error';
+    document.getElementById('submitOrder').disabled = true;
+  } else if (balance > 0 && itemsSum > balance) {
     hint.textContent = `Недостаточно бонусов. Вам не хватает ${itemsSum - balance} бонусов.`;
     hint.className = 'hint error';
     document.getElementById('submitOrder').disabled = true;
@@ -760,21 +1294,27 @@ function submitOrder() {
   const comment = document.getElementById('comment').value.trim();
 
   if (!fio || !email) { alert('Заполните обязательные поля: ФИО и Email'); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Проверьте адрес электронной почты'); return; }
   if (!balance) { alert('Укажите ваш текущий баланс бонусов'); return; }
   if (!delivery) { alert('Выберите способ получения'); return; }
   if (delivery === 'pickup' && !office) { alert('Выберите офис для самовывоза'); return; }
-  if (delivery === 'ozon' && !ozonAddress) { alert('Укажите адрес пункта выдачи Озон'); return; }
+  if (delivery === 'ozon' && !ozonAddress) { alert('Укажите адрес пункта выдачи Ozon'); return; }
 
   const itemsSum = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-  const deliveryCost = delivery === 'ozon' ? DELIVERY_PRICE : 0;
-  const total = itemsSum + deliveryCost;
+  if (itemsSum < MIN_ORDER) { alert(`Минимальная сумма заказа — ${MIN_ORDER} бонусов`); return; }
+  if (itemsSum > balance) { alert(`На балансе недостаточно бонусов. Не хватает ${itemsSum - balance}.`); return; }
+  const total = itemsSum;
+  const orderId = `PP-${new Date().toISOString().slice(0, 10).replaceAll('-', '')}-${Math.floor(1000 + Math.random() * 9000)}`;
 
   const order = {
+    orderId,
     fio, email, dept,
     items: cart.map(i => `${i.title}${i.size ? ' (' + i.size + ')' : ''} — ${i.qty} шт.`).join('\n'),
-    itemsSum, deliveryCost, total,
+    itemsSum,
+    deliveryCost: 0,
+    total,
     balance,
-    delivery: delivery === 'pickup' ? 'Самовывоз: ' + office : 'Доставка Озон',
+    delivery: delivery === 'pickup' ? 'Самовывоз: ' + office : 'Доставка Ozon',
     address: delivery === 'ozon' ? ozonAddress : '',
     comment
   };
@@ -790,8 +1330,10 @@ function submitOrder() {
   })
   .then(() => {
     closeModal('checkoutModal');
+    document.getElementById('successOrderNumber').textContent = `Номер заказа: ${orderId}`;
     openModal('successModal');
     cart = [];
+    saveCart();
     updateCartCount();
     document.getElementById('submitOrder').disabled = false;
     document.getElementById('submitOrder').textContent = 'Отправить заказ';
@@ -818,11 +1360,15 @@ function submitIdea() {
   const text = document.getElementById('ideaText').value.trim();
   if (!name || !email || !text) { alert('Заполните все обязательные поля'); return; }
 
-  alert('✅ Спасибо за вашу идею! Мы рассмотрим её и, если она подойдёт, добавим в ассортимент.');
+  const subject = encodeURIComponent('Идея для мерча Pixel Plus');
+  const body = encodeURIComponent(`Имя: ${name}\nEmail: ${email}\n\nИдея:\n${text}`);
+  window.location.href = `mailto:m.koniaeva@pixelplus.ru?subject=${subject}&body=${body}`;
   closeModal('ideaModal');
 }
 
 // ===== МОДАЛКИ =====
+document.getElementById('balanceInput').addEventListener('input', updateCheckoutTotal);
+
 function openModal(id) {
   document.getElementById(id).classList.add('active');
   document.body.style.overflow = 'hidden';
@@ -840,6 +1386,13 @@ document.querySelectorAll('.modal-overlay').forEach(overlay => {
   });
 });
 
+document.getElementById('products').addEventListener('click', event => {
+  const openButton = event.target.closest('[data-open-product]');
+  const addButton = event.target.closest('[data-add-product]');
+  if (openButton) openProductModal(openButton.dataset.openProduct);
+  if (addButton) addToCart(addButton.dataset.addProduct);
+});
+
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     document.querySelectorAll('.modal-overlay.active').forEach(overlay => {
@@ -850,6 +1403,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ===== СТАРТ =====
+updateCartCount();
 loadProducts(); 
 </script>
 
